@@ -20,6 +20,10 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import ch.qos.logback.core.status.Status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 
 import com.hellokoding.springboot.HelloController;
 
@@ -44,8 +48,8 @@ public class HelloWorldTest {
     @Test
     public  void getHello() throws Exception{
         mvc.perform(MockMvcRequestBuilders.get("/hello")
-        .accept(MediaType.APPLICATION_XML));
-//        .andExpect()
+        .accept(MediaType.APPLICATION_XML))
+        .andExpect(status().is(200));
         
     }
     

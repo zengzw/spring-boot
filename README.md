@@ -19,3 +19,17 @@ https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
 
 application.properties
 	数据库配置，日志相关配置
+	
+
+#create spring boot demo	
+http://start.spring.io/
+
+
+
+#Spring Boot提供了默认配置的模板引擎主要有以下几种：
+
+Thymeleaf
+FreeMarker
+Velocity
+Groovy
+Mustache
