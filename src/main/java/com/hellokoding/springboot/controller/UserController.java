@@ -4,6 +4,9 @@
  */
 package com.hellokoding.springboot.controller;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -30,6 +33,10 @@ public class UserController {
     
     static Map<Long, User> mapUsers = Collections.synchronizedMap(new HashMap<Long,User>());
     
+    
+    
+    
+    @ApiOperation("获取用户列表")
     @RequestMapping("/")
     public List<User> getUserList(){
         List<User> list = new ArrayList<User>(mapUsers.values());
@@ -37,6 +44,8 @@ public class UserController {
     }
     
 
+    @ApiOperation("创建用户")
+    @ApiImplicitParam(name="user",value="用户实体",required=true,dataType="User")
     @RequestMapping(value="/",method=RequestMethod.POST)
     public String postUser(User user){
         mapUsers.put(user.getId(), user);
@@ -45,6 +54,8 @@ public class UserController {
     }
     
     
+    @ApiOperation("根据用户Id获取用户信息")
+    @ApiImplicitParam(name="id",value="用户Id",required=true,dataType="Long")
     @RequestMapping(value="/{id}",method=RequestMethod.PUT)
     public String updateUser(@PathVariable long id,User user){
         
