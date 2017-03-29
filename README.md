@@ -58,12 +58,12 @@ http://start.spring.io/
 # Mybatis
 
 - ANNOTATION
-	-- UserMapperANO
-	-- WebApplicaton add config @MapperScan("com.hellokoding.springboot.mybatismapper")
-	-- test class: UserMapperTest.xml
+	- UserMapperANO
+	- WebApplicaton add config @MapperScan("com.hellokoding.springboot.mybatismapper")
+	- test class: UserMapperTest.xml
 - XML
-	-- UserMapper
-	-- 对应sql的操作：com.mybatis.mapper.UserMapper.xml
-	-- test class: UserMapperXmlTest
+	- UserMapper
+	- 对应sql的操作：com.mybatis.mapper.UserMapper.xml
+	- test class: UserMapperXmlTest
 	
  
