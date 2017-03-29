@@ -1,7 +1,8 @@
-# Spring Boot Hello World Example with JSP
+# Spring Boot Example 
 
 ## Guide
-https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
+- https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
+- http://blog.didispace.com/springbootmultidatasource/
 
 ## What you'll need
 - JDK 1.7 or later
@@ -34,13 +35,19 @@ http://start.spring.io/
 - Mustache
 
 ## 全局异常处理
-- exception/GlobalExcpeitonHandle.java
+- 类：exception/GlobalExcpeitonHandle.java
  
  
-# spring jdbctemplate
+## spring jdbctemplate
  
  
-# spring data JPA
+## spring data JPA
 - 依赖与hibernate
- 
+
+## 多数据源
+- jdbctemplate
+- spring data jpa(未实现）
+
+## redis
+
  

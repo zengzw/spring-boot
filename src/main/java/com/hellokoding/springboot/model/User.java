@@ -4,17 +4,45 @@
  */
 package com.hellokoding.springboot.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  *
  * @author zengzw
  * @date 2017年3月24日
  */
-public class User {
+@Entity
+public class User implements Serializable{
+    
+    /**
+     * 
+     */
+    private static final long serialVersionUID = 3791711276264771891L;
 
+    /**
+     * 
+     */
+    public User() {
+    }
+    
+    public User(String name,int age){
+        this.name = name;
+        this.age = age;
+    }
+
+    @Id
+    @GeneratedValue
     private Long id; 
     
+    @Column(name="name")
     private String name; 
     
+    @Column(name="age")
     private Integer age;
     
     public Integer getAge() {

@@ -5,6 +5,7 @@
 package com.hellokoding.springboot.serviceimpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ import com.hellokoding.springboot.service.IUserService;
 public class UserServiceImpl implements IUserService {
     
     @Autowired
+    @Qualifier("primaryJdbcTemplate")
     private JdbcTemplate  jdbcTemplate;
 
     @Override
