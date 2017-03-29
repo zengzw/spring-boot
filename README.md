@@ -48,6 +48,22 @@ http://start.spring.io/
 - jdbctemplate
 - spring data jpa(未实现）
 
-## redis
+## Redis
+- String
+- Object
 
+# MongoDB
+- 
+
+# Mybatis
+
+- ANNOTATION
+	-- UserMapperANO
+	-- WebApplicaton add config @MapperScan("com.hellokoding.springboot.mybatismapper")
+	-- test class: UserMapperTest.xml
+- XML
+	-- UserMapper
+	-- 对应sql的操作：com.mybatis.mapper.UserMapper.xml
+	-- test class: UserMapperXmlTest
+	
  
