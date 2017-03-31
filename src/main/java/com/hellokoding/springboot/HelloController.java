@@ -36,4 +36,16 @@ public class HelloController {
         throw new RuntimeException("出错啦");
         
     }
+    
+    
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+    
+    @RequestMapping("/home")
+    public String home(){
+        
+        return "hello";
+    }
 }

@@ -48,14 +48,22 @@ http://start.spring.io/
 - jdbctemplate
 - spring data jpa(未实现）
 
+
+## Hibernate
+`
+model: User
+respository:UserRespository
+test-class: UserRespositoryTest
+`
+
 ## Redis
 - String
 - Object
 
-# MongoDB
+## MongoDB
 - 
 
-# Mybatis
+## Mybatis
 
 - ANNOTATION
 	- UserMapperANO
@@ -67,18 +75,34 @@ http://start.spring.io/
 	- 对应sql的操作：com.mybatis.mapper.UserMapper.xml
 	- test class: UserMapperXmlTest
 
-# Scheduling
+## Scheduling
 - WebApplicaton 中添加 @EnableScheduling 启用定时器
 - @Scheduled(fixedRate = 5000) ：上一次开始执行时间点之后5秒再执行
 - @Scheduled(fixedDelay = 5000) ：上一次执行完毕时间点之后5秒再执行
 - @Scheduled(initialDelay=1000, fixedRate=5000) ：第一次延迟1秒后执行，之后按fixedRate的规则每5秒执行一次
 - @Scheduled(cron="*/5 * * * * *") ：通过cron表达式定义规则
 
-# Async
+## Async
 - 
 
-#Log
+## Log
 - 
  
-# AOP
+## AOP
 - @Order(i)注解来标识切面的优先级。i的值越小，优先级越高
+
+## Security
+- web 安全控制  WebSecurityConfig.java
+
+
+## Cache
+- @EnableCaching 开启缓存
+- 在数据访问接口中，增加缓存配置注解
+`
+@CacheConfig(cacheNames = "users")
+public interface UserRepository extends JpaRepository<User, Long> {
+    @Cacheable
+    User findByName(String name);
+}
+`
+

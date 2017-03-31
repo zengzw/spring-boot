@@ -5,7 +5,9 @@
 package com.hellokoding.springboot.logs;
 
 import org.apache.log4j.AppenderSkeleton;
+import org.hsqldb.lib.KMPSearchAlgorithm;
 import org.slf4j.event.LoggingEvent;
+import org.springframework.data.mongodb.core.MongoDbUtils;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
@@ -22,6 +24,7 @@ public class MongoAppender extends AppenderSkeleton {
     
     private MongoClient mongoClient;
     
+    
     private MongoDatabase mongoDatabase;
     
     private MongoCollection<BasicDBObject> logsCollection;
@@ -31,7 +34,7 @@ public class MongoAppender extends AppenderSkeleton {
     private String collectionName;
     
     protected void append(LoggingEvent loggingEvent) {
-      /*  if(mongoDatabase == null) {
+    /*  if(mongoDatabase == null) {
             MongoClientURI connectionString = new MongoClientURI(connectionUrl);
             mongoClient = new MongoClient(connectionString);
             mongoDatabase = mongoClient.getDB(databaseName);

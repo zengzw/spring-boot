@@ -58,4 +58,12 @@ public class UserRespositoryTest {
         // 测试findAll, 查询所有记录, 验证上面的删除是否成功
         Assert.assertEquals(9, userRepository.findAll().size());
     }
+    
+    @Test
+    public void test1() throws Exception {
+        User u1 = userRepository.findByName("AAA");
+        System.out.println("第一次查询：" + u1.getAge());
+        User u2 = userRepository.findByName("AAA");
+        System.out.println("第二次查询：" + u2.getAge());
+    }
 }
