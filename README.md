@@ -98,7 +98,7 @@ test-class: UserRespositoryTest
 ## Cache
 - @EnableCaching 开启缓存
 - 在数据访问接口中，增加缓存配置注解
-```
+```java
 @CacheConfig(cacheNames = "users")
 public interface UserRepository extends JpaRepository<User, Long> {
     @Cacheable
