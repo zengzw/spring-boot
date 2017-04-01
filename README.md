@@ -1,4 +1,4 @@
-# Spring Boot Example 
+# Spring Boot Example &  Spring cloud
 
 ## Guide
 - https://hellokoding.com/spring-boot-hello-world-example-with-jsp/
@@ -151,3 +151,36 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	- 该端点用来暴露程序运行中的线程信息。
 - /trace
 	- 该端点用来返回基本的HTTP跟踪信息
+	
+# Spring Cloud
+
+## Eureka 服务注册发现
+-	添加依赖包
+```
+ <dependency>
+        <groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-eureka-server</artifactId>
+    </dependency>
+</dependencies>
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+	    <groupId>org.springframework.cloud</groupId>
+	    <artifactId>spring-cloud-dependencies</artifactId>
+	    <version>Brixton.RELEASE</version>
+	    <type>pom</type>
+	    <scope>import</scope>
+	</dependency>
+    </dependencies>
+</dependencyManagement>
+``` 
+
+- @EnableEurekaServer 启动一个  服务注册中心 
+- 在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为
+```
+server.port=1111
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/
+
+```
