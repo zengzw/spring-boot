@@ -130,5 +130,24 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	- 操作控制类
 		- 提供了对应用的关闭等操作类功能。
 - /health 
-	-- 获取健康信息
-- 
+	- 获取健康信息
+- /autoconfig
+	- 该端点用来获取应用的自动化配置报告，其中包括所有自动化配置的候选项
+	- positiveMatches中返回的是条件匹配成功的自动化配置
+	- negativeMatches中返回的是条件匹配不成功的自动化配置
+- /beans
+	- 该端点用来获取应用上下文中创建的所有Bean
+- /configprops
+	- 该端点用来获取应用中配置的属性信息报告。
+- /env
+	- 它用来获取应用所有可用的环境属性报告
+- /mappings
+	- 该端点用来返回所有Spring MVC的控制器映射关系报告
+- /info
+	- 该端点用来返回一些应用自定义的信息。 配置文件中通过info前缀来设置一些属性
+- /metrics
+	- 该端点用来返回当前应用的各类重要度量指标，比如：内存信息、线程信息、垃圾回收信息等。
+- /dump
+	- 该端点用来暴露程序运行中的线程信息。
+- /trace
+	- 该端点用来返回基本的HTTP跟踪信息
