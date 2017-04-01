@@ -50,11 +50,11 @@ http://start.spring.io/
 
 
 ## Hibernate
-`
+```
 model: User
 respository:UserRespository
 test-class: UserRespositoryTest
-`
+```
 
 ## Redis
 - String
@@ -65,12 +65,12 @@ test-class: UserRespositoryTest
 
 ## Mybatis
 
-- ANNOTATION
+- 注解
 	- UserMapperANO
 	- WebApplicaton add config @MapperScan("com.hellokoding.springboot.mybatismapper")
 	- test class: UserMapperTest.xml
 	
-- XML
+- xml 配置
 	- UserMapper
 	- 对应sql的操作：com.mybatis.mapper.UserMapper.xml
 	- test class: UserMapperXmlTest
@@ -98,6 +98,7 @@ test-class: UserRespositoryTest
 ## Cache
 - @EnableCaching 开启缓存
 - 在数据访问接口中，增加缓存配置注解
+
 ```java
 @CacheConfig(cacheNames = "users")
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -105,4 +106,29 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByName(String name);
 }
 ```
+- Spring Boot根据下面的顺序去侦测缓存提供者：
+	-- Generic
+	-- JCache (JSR-107)
+	-- EhCache 2.x
+	-- Hazelcast
+	-- Infinispan
+	-- Redis
+	-- Guava
+	-- Simple
+- spring.cache.type 来强制指定使用那个缓存
 
+
+##RabbitMQ
+- 
+
+## actuator 监控端点
+- 分类
+	-- 应用配置类
+		-- 获取应用程序中加载的应用配置、环境变量、自动化配置报告等与Spring Boot应用密切相关的配置类信息。
+	-- 度量指标类
+		-- 获取应用程序运行过程中用于监控的度量指标，比如：内存信息、线程池信息、HTTP请求统计等。
+	-- 操作控制类
+		-- 提供了对应用的关闭等操作类功能。
+- /health 
+	-- 获取健康信息
+- 
